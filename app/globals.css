@@ -1,0 +1,139 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Palette claire aux couleurs de l'IUT de Toulon */
+  --background: #f5f7fb;
+  --foreground: #1e3664;
+  --card: #ffffff;
+  --card-foreground: #1e3664;
+  --popover: #ffffff;
+  --popover-foreground: #1e3664;
+  --primary: #0698d6; /* Bleu IUT clair */
+  --primary-foreground: #ffffff;
+  --secondary: #1e3664; /* Bleu IUT foncé */
+  --secondary-foreground: #ffffff;
+  --muted: #e2e8f0;
+  --muted-foreground: #475569;
+  --accent: #e0f4ff;
+  --accent-foreground: #1e3664;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #d0d8e6;
+  --input: #d0d8e6;
+  --ring: #0698d6;
+  --chart-1: #0698d6;
+  --chart-2: #1e3664;
+  --chart-3: #22c55e;
+  --chart-4: #f97316;
+  --chart-5: #8b5cf6;
+  --radius: 0.625rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1e3664;
+  --sidebar-primary: #0698d6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e0f4ff;
+  --sidebar-accent-foreground: #1e3664;
+  --sidebar-border: #d0d8e6;
+  --sidebar-ring: #0698d6;
+}
+
+.dark {
+  /* Palette sombre inspirée des bleus IUT */
+  --background: #020617;
+  --foreground: #e5f3ff;
+  --card: #020617;
+  --card-foreground: #e5f3ff;
+  --popover: #020617;
+  --popover-foreground: #e5f3ff;
+  --primary: #0698d6;
+  --primary-foreground: #020617;
+  --secondary: #0b1120;
+  --secondary-foreground: #e5f3ff;
+  --muted: #020617;
+  --muted-foreground: #94a3b8;
+  --accent: #0b1120;
+  --accent-foreground: #e5f3ff;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fecaca;
+  --border: #0f172a;
+  --input: #0f172a;
+  --ring: #0698d6;
+  --chart-1: #38bdf8;
+  --chart-2: #22c55e;
+  --chart-3: #f97316;
+  --chart-4: #eab308;
+  --chart-5: #8b5cf6;
+  --sidebar: #020617;
+  --sidebar-foreground: #e5f3ff;
+  --sidebar-primary: #0698d6;
+  --sidebar-primary-foreground: #020617;
+  --sidebar-accent: #0b1120;
+  --sidebar-accent-foreground: #e5f3ff;
+  --sidebar-border: #0f172a;
+  --sidebar-ring: #0698d6;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background:
+      radial-gradient(circle at top left, #0698d61a, transparent 55%),
+      radial-gradient(circle at bottom right, #1e36641a, transparent 55%),
+      var(--background);
+  }
+}
+
+/* Arrière-plan spécifique pour les pages d'authentification */
+.auth-background {
+  background:
+    radial-gradient(circle at top left, #0698d633, transparent 55%),
+    radial-gradient(circle at bottom right, #1e366433, transparent 55%),
+    #f5f7fb;
+}
