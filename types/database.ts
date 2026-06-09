@@ -62,7 +62,6 @@ export interface Event {
   newsletter_topics?: NewsletterTopic[]
   feedback?: Feedback[]
   comments?: Comment[]
-  files?: File[]
 }
 
 export interface Task {
@@ -82,7 +81,6 @@ export interface Task {
   event?: Event
   responsable?: Profile
   comments?: Comment[]
-  files?: File[]
 }
 
 export interface EditorialCalendar {
@@ -104,16 +102,7 @@ export interface EditorialCalendar {
   updated_at: string
   // Relations
   event?: Event
-  files?: EditorialFile[]
   comments?: Comment[]
-}
-
-export interface EditorialFile {
-  id: string
-  editorial_id: string
-  file_url: string
-  file_name: string
-  created_at: string
 }
 
 export interface NewsletterEdition {
@@ -167,17 +156,5 @@ export interface Feedback {
   created_at: string
   // Relations
   event?: Event
-  user?: Profile
-}
-
-export interface File {
-  id: string
-  file_url: string
-  file_name: string
-  user_id: string
-  event_id: string | null
-  task_id: string | null
-  created_at: string
-  // Relations
   user?: Profile
 }
